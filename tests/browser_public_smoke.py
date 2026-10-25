@@ -20,7 +20,7 @@ def run(screenshots: Path) -> dict:
     from playwright.sync_api import sync_playwright
 
     screenshots.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="il-tavolo-public-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="rollharbor-public-") as temporary:
         root = Path(temporary)
         shutil.copytree(ROOT / "web", root / "web")
         shutil.copytree(ROOT / "examples/demo", root / "examples/demo")

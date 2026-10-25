@@ -1,4 +1,4 @@
-# Il Tavolo
+# RollHarbor
 
 **La vostra avventura, con un punto di ripresa.**
 
@@ -6,7 +6,7 @@ Una plancia locale per quattro giocatori e un master in chat: schede, mappa,
 combattimenti, dadi, inventari e diario restano insieme, anche fra una sessione
 e la successiva. L'interfaccia è in italiano; il motore gira sul vostro computer.
 
-![Il Tavolo con lo scenario originale di Portolume](docs/screenshots/table.png)
+![RollHarbor con lo scenario originale di Portolume](docs/screenshots/table.png)
 
 ## Si comincia così
 

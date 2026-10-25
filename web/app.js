@@ -411,7 +411,7 @@ async function refresh() {
   finally { polling = false; }
 }
 function applyWorldMetadata() {
-  const brand = world.brand || 'IL TAVOLO';
+  const brand = world.brand || 'ROLLHARBOR';
   $('.brand>span').firstChild.textContent = brand;
   $('.brand').setAttribute('aria-label',brand + ', torna all’atlante');
   $('#map-heading').textContent = world.region || 'Mappa della campagna';

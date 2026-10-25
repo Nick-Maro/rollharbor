@@ -1,6 +1,6 @@
 # Security
 
-Il Tavolo is a local application for a trusted shared computer. It binds to
+RollHarbor is a local application for a trusted shared computer. It binds to
 `127.0.0.1`, validates request origin/host and serves only approved public web
 paths. It has no account system and should not be exposed as an Internet service.
 

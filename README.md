@@ -1,8 +1,8 @@
 <div align="center">
 
-# Il Tavolo
+# RollHarbor
 
-### Your adventure has a save file.
+### Your campaign, ready to resume.
 
 A local tabletop companion for four players and a chat Dungeon Master.
 Keep the story in the conversation. Put the world, characters and consequences on the table.
@@ -14,14 +14,14 @@ Keep the story in the conversation. Put the world, characters and consequences o
 ![Code: MIT](https://img.shields.io/badge/code-MIT-c7a462)
 ![Rules: SRD 5.1](https://img.shields.io/badge/rules-SRD_5.1_(2014)-765a87)
 
-![Il Tavolo: original demo with a party, regional map and current scene](docs/screenshots/table.png)
+![RollHarbor: original demo with a party, regional map and current scene](docs/screenshots/table.png)
 
 </div>
 
 You return to a campaign after a week. Who still has a spell slot? Where did the
 party stop? Which clues were facts, and which were someone's theory?
 
-Il Tavolo keeps that state in ordinary local files and gives your group a shared
+RollHarbor keeps that state in ordinary local files and gives your group a shared
 browser board. A human DM—or a chat assistant with filesystem access—resolves
 declared actions and saves the consequences. Players keep control of their
 characters. Your next session starts from the actual save.
@@ -60,7 +60,7 @@ open the browser; **`ARRESTA.cmd`** closes the verified local process.
 4. The DM resolves it and saves the result. The board refreshes in about two seconds.
 
 The browser can prepare and copy an intention; **you still send it to your chat**.
-Il Tavolo does not contain a chatbot or call an LLM. An assistant's subscription,
+RollHarbor does not contain a chatbot or call an LLM. An assistant's subscription,
 filesystem permissions and capabilities are separate from this application.
 
 Already have a table in this folder? Existing saves are preserved. See
