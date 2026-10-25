@@ -18,6 +18,9 @@ from tools.dnd import emit, JsonParser
 
 def relative_path(root: Path, value: str, label: str) -> Path:
     text_field(value, label, 1000)
+    # Normalize both sides of the containment check. Windows temporary roots
+    # may use an 8.3 alias while resolving a child expands its long path.
+    root = Path(root).resolve()
     candidate = Path(value)
     require(not candidate.is_absolute(), f"{label}: serve un percorso relativo alla cartella del tavolo.")
     resolved = (root / candidate).resolve()

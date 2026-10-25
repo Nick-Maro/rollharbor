@@ -151,6 +151,14 @@ class CampaignToolsTests(unittest.TestCase):
         with self.assertRaises(CampaignError):
             campaign.source_info(self.root, self.pack)
 
+    def test_source_verification_accepts_a_root_alias_without_allowing_escape(self):
+        alias = self.root / ".." / self.root.name
+        self.assertEqual(alias.resolve(), self.root.resolve())
+        self.assertTrue(campaign.verify_source(alias, self.pack)["ok"])
+        self.assertEqual(campaign.relative_path(alias, "source.pdf", "source.path"), self.pdf.resolve())
+        with self.assertRaises(CampaignError):
+            campaign.relative_path(alias, "../outside.pdf", "source.path")
+
     def test_cli_json_and_list_alias(self):
         for command in ("info", "verify", "list"):
             run = subprocess.run([sys.executable, str(ROOT / "tools/campaign.py"), "--root", str(self.root), command],
