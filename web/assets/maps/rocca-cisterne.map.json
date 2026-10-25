@@ -1,0 +1,18 @@
+{
+  "format": "dnd-dungeon-map-v1",
+  "audience": "players",
+  "title": "L’abbazia e le cisterne",
+  "grid": {
+    "columns": 80,
+    "rows": 60,
+    "cell_m": 1.5,
+    "confirmed": false
+  },
+  "cell_px": 64,
+  "width_px": 5120,
+  "height_px": 3840,
+  "visible_floor_area": 2100.056,
+  "svg_sha256": "250fe3441267883a629525f0b54c4843ee4aa1335fd3d763b78f051fde151ae9",
+  "renderer": "local-shapely-svg",
+  "canonical": false
+}

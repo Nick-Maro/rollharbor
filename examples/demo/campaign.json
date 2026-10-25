@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "revision": 0,
+  "campaign_id": "demo",
+  "phase": "creation",
+  "session": 1,
+  "location_id": "portolume",
+  "discovered": ["portolume", "crocevia", "bosco", "rocca"],
+  "party_size": 4,
+  "party": [],
+  "active_character_id": null,
+  "character": null,
+  "scene": {
+    "title": "Benvenuti a Portolume",
+    "text": "Il vento porta odore di sale e pane caldo. Al porto, le lanterne azzurre si accendono una dopo l'altra. Create i vostri quattro personaggi in Il gruppo; poi concordate con il master da dove cominciare. Nessun viaggio o incarico è già stato deciso.",
+    "choices": ["Creiamo i nostri personaggi.", "Chiediamo al master come iniziare."]
+  },
+  "quests": [],
+  "journal": [],
+  "rolls": [],
+  "pending_actions": [],
+  "combat": {"active": false, "round": 0, "turn_index": 0, "participants": []},
+  "clock": {"day": 1, "time": "18:00", "weather": "Brezza marina"},
+  "flags": {"run_id": "portolume-demo"}
+}

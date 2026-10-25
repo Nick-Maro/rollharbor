@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12241d">
+  <title>La cartoteca · Il vostro tavolo</title>
+  <link rel="icon" href="/assets/sigil.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/map-gallery.css">
+  <script src="/map-gallery.js" defer></script>
+</head>
+<body>
+  <header class="carto-header">
+    <a class="carto-back" href="/#combattimento">← Torna al tavolo</a>
+    <div><p class="carto-kicker">INCHIOSTRO, PIETRA E PASSAGGI</p><h1>La cartoteca</h1></div>
+    <a class="carto-badge carto-library-link" href="/artworks.html">Illustrazioni d’atmosfera ↗</a>
+  </header>
+  <main class="carto-layout">
+    <aside class="carto-sidebar" aria-label="Scegli una mappa">
+      <h2>Le vostre carte</h2>
+      <p>Mappe condivise e disegni dimostrativi. Aprire una carta lascia ferma la partita.</p>
+      <nav id="map-list" aria-label="Mappe disponibili"></nav>
+      <div class="carto-sidebar-note"><span aria-hidden="true">✦</span><p>I luoghi ancora da scoprire restano nelle carte del master.</p></div>
+    </aside>
+    <section class="carto-workspace" aria-labelledby="map-title">
+      <div class="carto-heading"><div><p id="map-kind" class="carto-kicker">CARICAMENTO</p><h2 id="map-title">Apriamo le carte…</h2><p id="map-description"></p></div><p id="map-scale" class="carto-scale"></p></div>
+      <div class="carto-toolbar" role="group" aria-label="Strumenti della mappa">
+        <div class="carto-zoom"><button id="map-zoom-out" type="button" aria-label="Riduci la mappa">−</button><button id="map-fit" type="button">Adatta</button><button id="map-zoom-in" type="button" aria-label="Ingrandisci la mappa">+</button><output id="map-zoom-value" aria-live="polite">100%</output></div>
+        <label class="carto-style">Stile <select id="map-style" aria-label="Stile della mappa"></select></label>
+        <div class="carto-downloads"><a id="map-svg" download>Scarica SVG</a><a id="map-png" download>Scarica PNG</a><a id="map-project" download hidden>Progetto .ds</a></div>
+      </div>
+      <div id="map-viewport" class="carto-viewport" tabindex="0" role="region" aria-label="Mappa: trascina per spostarla, usa più e meno per ingrandire">
+        <div id="map-canvas" class="carto-canvas"><img id="map-image" alt="" draggable="false"></div>
+        <p id="map-message" class="carto-message" role="status">Caricamento delle mappe…</p>
+      </div>
+      <footer class="carto-footer"><p>Trascina per spostare la carta. Usa <kbd>+</kbd> e <kbd>−</kbd> per lo zoom, <kbd>0</kbd> per adattarla; le frecce la spostano.</p><p id="map-origin"></p></footer>
+    </section>
+  </main>
+</body>
+</html>

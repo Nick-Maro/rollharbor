@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
+  <title id="title">La costa delle Lanterne</title>
+  <desc id="desc">Carta schematica originale: mare a ovest, colline e boschi a est. I luoghi sono sovrapposti dalla plancia.</desc>
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#738477" stroke-opacity=".12"/></pattern>
+    <pattern id="waves" width="45" height="28" patternUnits="userSpaceOnUse"><path d="M0 14Q11 5 22 14T45 14" fill="none" stroke="#90aca2" stroke-opacity=".15"/></pattern>
+  </defs>
+  <rect width="1000" height="680" fill="#1b3534"/>
+  <rect width="1000" height="680" fill="url(#waves)"/>
+  <path d="M430 0Q300 100 370 190T300 350Q170 430 235 520T180 680H1000V0Z" fill="#263d30" stroke="#91a17a" stroke-width="3"/>
+  <path d="M260 450Q350 390 490 360T790 380M490 360Q550 290 620 210" fill="none" stroke="#c5ab71" stroke-width="5" stroke-dasharray="8 9" opacity=".55"/>
+  <g fill="#344c38" stroke="#6d8260" stroke-opacity=".6">
+    <path d="m550 235 22-56 22 56h-13v25h-18v-25zm68-42 25-63 25 63h-15v25h-20v-25zm75 45 22-56 22 56h-13v25h-18v-25z"/>
+    <path d="m690 485 48-88 48 88zm67 22 48-88 48 88zm74-7 38-70 38 70z"/>
+  </g>
+  <rect width="1000" height="680" fill="url(#grid)"/>
+  <g font-family="Georgia,serif" fill="#c1b58b" text-anchor="middle">
+    <text x="180" y="215" font-size="23" letter-spacing="6" transform="rotate(-18 180 215)">MARE DELLE LANTERNE</text>
+    <text x="735" y="575" font-size="18" letter-spacing="3">COLLINE DEL VENTO</text>
+    <text x="500" y="635" font-size="13" opacity=".65">CARTA SCHEMATICA · LE DISTANZE SI CONCORDANO NELLA SCENA</text>
+  </g>
+  <g transform="translate(910 80)" fill="none" stroke="#c1b58b"><path d="M0-30V30M-20 0H20m-20-30-7 20 7-5 7 5Z"/><text x="0" y="-40" text-anchor="middle" fill="#c1b58b" stroke="none" font-size="16">N</text></g>
+</svg>

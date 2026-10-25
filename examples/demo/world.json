@@ -1,0 +1,33 @@
+{
+  "id": "demo",
+  "title": "Le lanterne di Portolume",
+  "subtitle": "Quattro avventurieri. Una costa da esplorare. Le vostre scelte.",
+  "brand": "IL TAVOLO",
+  "region": "La costa delle Lanterne",
+  "map_asset": "/assets/demo-coast.svg",
+  "source": {
+    "title": "Le lanterne di Portolume",
+    "author": "Il Tavolo contributors",
+    "edition": "Regole SRD 5.1, base 2014",
+    "provenance": "Scenario originale dimostrativo incluso nel progetto.",
+    "guide": "Una cornice aperta per imparare a usare il tavolo. Il master prepara le situazioni; i giocatori scelgono personaggi e azioni. Nessun incarico è già accettato."
+  },
+  "overview": {
+    "levels": "1",
+    "players": 4,
+    "format": "Scenario originale di esempio, espandibile dal master",
+    "edition": "SRD 5.1, regole 2014",
+    "status": "Pronto per creare il gruppo; storia ancora da iniziare.",
+    "sessions_estimate": "Il master decide l'estensione della propria campagna.",
+    "rules": "Le scelte e le reazioni dei personaggi restano ai giocatori. Il master verifica le regole prima di salvare gli esiti.",
+    "map_note": "Carta originale schematica: conoscere un luogo non significa averlo visitato. Le distanze si stabiliscono nella scena."
+  },
+  "locations": [
+    {"id":"portolume","name":"Portolume","type":"town","x":260,"y":450,"description":"Barche colorate riposano lungo un molo di pietra. Sotto i portici, lanterne di vetro azzurro illuminano una bacheca di annunci.","actions":["Leggiamo gli annunci sul molo.","Chiediamo informazioni a chi lavora al porto.","Ci presentiamo e decidiamo come ci conosciamo."]},
+    {"id":"crocevia","name":"Crocevia delle Lanterne","type":"crossroads","x":490,"y":360,"description":"Un palo di indicazioni segna la strada costiera e il sentiero verso il bosco.","actions":["Osserviamo le indicazioni.","Chiediamo al master cosa sappiamo delle strade."]},
+    {"id":"bosco","name":"Bosco del Vetro","type":"forest","x":620,"y":210,"description":"Sopra il villaggio si estende un bosco di pini. Vecchie lanterne segnano il sentiero principale.","actions":["Vorremmo esplorare il sentiero."]},
+    {"id":"rocca","name":"Rocca delle Cisterne","type":"ruins","x":790,"y":380,"description":"Una rocca in rovina domina la costa. La sua sagoma è un punto di riferimento per chi naviga.","actions":["Chiediamo notizie della rocca."]}
+  ],
+  "paths": [["portolume","crocevia"],["crocevia","bosco"],["crocevia","rocca"]],
+  "character_templates": []
+}

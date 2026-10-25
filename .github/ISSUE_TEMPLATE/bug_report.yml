@@ -1,0 +1,23 @@
+name: Bug report
+description: Help us reproduce a problem without exposing your campaign.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Expected behavior, actual behavior, and steps to reproduce.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Python version, browser, commit
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Redact names and private story details. Never attach your master folder or a commercial PDF.
+      render: text

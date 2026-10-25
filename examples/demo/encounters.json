@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "visibility": "dm_only",
+  "campaign_id": "demo",
+  "source": "Scenario originale Le lanterne di Portolume",
+  "profiles": {},
+  "scenes": {
+    "porto": {
+      "title": "Gli annunci sul molo",
+      "references": ["master/CURRENT.md: scenario originale"],
+      "profile_ids": [],
+      "roster": [],
+      "dm_checks": ["Attendere le scelte dei giocatori; la preparazione non avvia una scena o un combattimento."]
+    }
+  }
+}

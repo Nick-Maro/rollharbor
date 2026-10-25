@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "maps": [
+    {
+      "id": "rocca-cisterne",
+      "title": "La rocca e le cisterne",
+      "kind": "ESEMPIO ORIGINALE",
+      "description": "Complesso dimostrativo con sale, cortili e caverne. La carta non rappresenta un luogo già scoperto o una missione accettata.",
+      "origin": "Disegno originale generato dagli strumenti locali. SVG scalabile e PNG 5120 × 3840.",
+      "columns": 80,
+      "rows": 60,
+      "cell_m": 1.5,
+      "variants": [
+        {"id":"parchment","title":"Pergamena","svg":"/assets/maps/rocca-cisterne.svg","png":"/assets/maps/rocca-cisterne.png"},
+        {"id":"blueprint","title":"Carta azzurra","svg":"/assets/maps/rocca-cisterne-blue.svg","png":"/assets/maps/rocca-cisterne-blue.png"}
+      ]
+    }
+  ]
+}

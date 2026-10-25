@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14241f">
+  <meta name="description" content="Un tavolo di avventura personale: mappa, scheda, dadi e diario. Il master ti aspetta nella chat.">
+  <title>Il vostro tavolo d'avventura</title>
+  <link rel="icon" href="/assets/sigil.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/character-builder.css">
+  <link rel="stylesheet" href="/reference.css">
+  <link rel="stylesheet" href="/table-views.css">
+  <link rel="stylesheet" href="/encounter-view.css">
+  <link rel="stylesheet" href="/adventure-views.css">
+  <link rel="stylesheet" href="/table-tools.css">
+  <link rel="stylesheet" href="/tactical-board.css">
+  <link rel="stylesheet" href="/immersion.css">
+  <script src="/rules-catalog.js" defer></script>
+  <script src="/reference.js" defer></script>
+  <script src="/character-builder.js" defer></script>
+  <script src="/encounter-view.js" defer></script>
+  <script src="/adventure-views.js" defer></script>
+  <script src="/table-tools.js" defer></script>
+  <script src="/tactical-board.js" defer></script>
+  <script src="/immersion.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#view-combattimento">Vai al tavolo</a>
+  <svg class="symbol-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Zm6-2v16m6-14v16"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M3 3c4 0 6 0 9 2 3-2 5-2 9-2v16c-4 0-6 0-9 2-3-2-5-2-9-2Z"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24"><path d="m12 2 10 6v9l-10 5-10-5V8Zm0 0L7 9l5 13 5-13ZM2 8l5 1h10l5-1M2 17l5-8m10 0 5 8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 3-3 2-3 5m0 3v.1"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-swords" viewBox="0 0 24 24"><path d="m4 3 3 1 12 12-3 3L4 7Zm13 1 3-1-1 4-5 5M3 20l4-4m10 1 4 4M3 14l7 7m4-18 7 7"/></symbol>
+    <symbol id="i-scene" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 5Zm4 5h8M8 12h5"/></symbol>
+  </defs></svg>
+
+  <aside class="sidebar">
+    <a class="brand" href="#atlante" aria-label="Torna all'atlante"><svg class="brand-sigil" viewBox="0 0 60 70" aria-hidden="true"><path d="m30 3 25 14v31L30 66 5 48V17ZM30 3 17 24l13 42 13-42ZM5 17l12 7h26l12-7M5 48l12-24m26 0 12 24"/></svg><span>IL TAVOLO<small>IL VOSTRO TAVOLO D'AVVENTURA</small></span></a>
+    <div class="sidebar-rule"></div>
+    <p class="overline nav-caption">IL TUO VIAGGIO</p>
+    <nav aria-label="Navigazione principale">
+      <button class="nav-item" data-view="combattimento" title="Combattimento: iniziativa e azioni"><svg><use href="#i-swords"/></svg><span class="nav-label">Battaglia</span><span class="nav-number">01</span></button>
+      <button class="nav-item" data-view="scena" title="Scena: esplorazione e dialoghi"><svg><use href="#i-scene"/></svg><span class="nav-label">Scena</span><span class="nav-number">02</span></button>
+      <button class="nav-item active" data-view="atlante" aria-current="page" title="Atlante del mondo"><svg><use href="#i-map"/></svg><span class="nav-label">Atlante</span><span class="nav-number">03</span></button>
+      <button class="nav-item" data-view="personaggio" title="Il gruppo e le schede"><svg><use href="#i-person"/></svg><span class="nav-label">Gruppo</span></button>
+      <button class="nav-item" data-view="diario" title="Diario, obiettivi e appunti"><svg><use href="#i-book"/></svg><span class="nav-label">Diario</span></button>
+      <button class="nav-item" data-view="taccuino" title="Persone, indizi e oggetti del gruppo"><svg><use href="#i-pin"/></svg><span class="nav-label">Taccuino</span></button>
+      <button class="nav-item" data-view="guida" title="Come si gioca"><svg><use href="#i-help"/></svg><span class="nav-label">Guida</span></button>
+    </nav>
+    <section class="sidebar-quest" aria-labelledby="quest-label"><span class="tiny-star">✧</span><p class="overline" id="quest-label">SUL TUO CAMMINO</p><h3 id="sidebar-quest-title">Una valle da scoprire</h3><p id="sidebar-quest-text">Ogni storia comincia con un primo passo.</p></section>
+    <div class="sidebar-bottom"><button class="quiet-button" id="export-button"><svg><use href="#i-save"/></svg>Esporta salvataggio</button><span class="offline-caption"><span></span>Tutto resta in questa cartella</span><small>Una storia tua. Un mondo che risponde.</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar"><p><span class="topbar-diamond">◇</span> CRONACHE DEL TAVOLO <span class="topbar-slash">/</span> <span id="session-label">SESSIONE 01</span></p><div class="connection" id="connection" role="status"><span></span>Collegamento…</div></header>
+    <div class="content">
+      <div class="page-heading"><div><p class="overline gold">LA VOSTRA CAMPAGNA</p><h1 id="campaign-title">Il vostro tavolo d'avventura</h1><p class="subtitle" id="campaign-subtitle">Quattro avventurieri. Un mondo da scoprire insieme.</p></div><button id="dice-open" class="outline-button"><svg><use href="#i-dice"/></svg>Tira i dadi</button></div>
+      <div id="load-error" class="error-panel" role="alert" hidden></div>
+      <section id="table-status" class="table-status" aria-label="Stato del tavolo" aria-live="polite"></section>
+      <div class="world-bar"><span><svg><use href="#i-pin"/></svg><strong id="current-location">Caricamento del luogo…</strong></span><span class="bar-divider"></span><span id="world-day">—</span><span id="world-time">—</span><span class="weather"><span>☂</span><span id="world-weather">—</span></span><span class="save-state" id="save-state">Salvataggio locale</span></div>
+
+      <details id="atmosphere-options" class="table-atmosphere"><summary>♫ <span>Atmosfera</span><small>Audio facoltativo</small></summary><div id="atmosphere-controls"></div></details>
+      <section id="view-combattimento" class="view" aria-label="Tavolo di combattimento" hidden><div id="turn-assist"></div><div id="tactical-board"></div><div id="table-effects"></div><div id="encounter-content"></div></section>
+      <section id="view-scena" class="view" aria-label="Scena, esplorazione e dialoghi" hidden><div id="scene-artwork"></div><div id="scene-view-content"></div><div id="scene-interactions"></div></section>
+      <section id="view-taccuino" class="view" aria-label="Taccuino delle conoscenze e inventari del gruppo" hidden><div id="knowledge-content"></div><div id="party-chest"></div></section>
+      <section id="view-atlante" class="view active" aria-label="Atlante del mondo">
+        <div class="adventure-layout">
+          <div class="map-column">
+            <section class="map-panel" aria-labelledby="map-heading">
+              <div class="panel-heading"><div><p class="overline">TERRA INCOGNITA</p><h2 id="map-heading">La regione del viaggio</h2></div><div class="map-tools"><button id="grid-toggle" title="Griglia di riferimento, senza scala di viaggio" aria-label="Mostra griglia di riferimento" aria-pressed="false">▦</button><button id="zoom-out" title="Riduci mappa" aria-label="Riduci mappa">−</button><button id="zoom-in" title="Ingrandisci mappa" aria-label="Ingrandisci mappa">+</button><button id="zoom-reset" title="Ripristina vista" aria-label="Ripristina vista">↺</button></div></div>
+              <div class="map-viewport" id="map-viewport"><svg id="map-svg" viewBox="0 0 1000 680" role="group" aria-label="Mappa interattiva della campagna. Seleziona un luogo conosciuto per leggerne i dettagli.">
+                <defs><pattern id="map-grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#503e28" stroke-width="1" opacity=".28"/></pattern><filter id="fog-soft"><feGaussianBlur stdDeviation="24"/></filter><mask id="fog-mask"><rect width="1000" height="680" fill="white"/><g id="fog-holes" filter="url(#fog-soft)"></g></mask></defs>
+                <g id="map-transform"><image href="/assets/demo-coast.svg" width="1000" height="680"/><rect width="1000" height="680" fill="#273b35" opacity=".67" mask="url(#fog-mask)" pointer-events="none"/><g id="map-paths" fill="none" stroke="#6d5335" stroke-width="2" stroke-dasharray="5 7" opacity=".7"></g><rect id="grid-layer" width="1000" height="680" fill="url(#map-grid)" pointer-events="none" hidden/><g id="map-pins"></g></g>
+              </svg><span class="map-annotation">I luoghi si svelano durante il viaggio.</span></div>
+              <div class="map-footer"><span><i class="legend-player"></i>La tua posizione</span><span><i class="legend-known"></i>Luogo conosciuto</span><span class="discovery-count" id="discovery-count">2 luoghi scoperti</span></div>
+            </section>
+            <section class="location-strip" id="location-detail" aria-live="polite"></section>
+            <section class="action-panel" aria-labelledby="action-heading"><div class="action-title"><h2 id="action-heading">Che cosa fate?</h2><span>LA PAROLA PASSA A VOI</span></div><p id="action-actor-label">Scrivete liberamente in chat. Qui potete preparare un messaggio da copiare.</p><form id="action-form"><div class="action-speaker-field"><label for="action-speaker">Chi parla nel messaggio?</label><select id="action-speaker"><option value="active">Personaggio selezionato</option><option value="party">Tutti · azione del gruppo</option><option value="none">Parla liberamente · senza prefisso</option></select></div><label class="sr-only" for="action-input">La vostra azione libera</label><textarea id="action-input" rows="3" maxlength="1900" placeholder="Descrivete ciò che volete tentare, una domanda o una vostra idea…"></textarea><div class="action-bottom"><span id="pending-label">Potete sempre scegliere una strada diversa.</span><button class="primary-button" type="submit" id="action-submit">Prepara e copia<svg><use href="#i-arrow"/></svg></button></div></form><div id="pending-actions" class="pending-actions"></div></section>
+          </div>
+          <aside class="story-column">
+            <section class="scene-panel"><div class="scene-kicker"><span class="tiny-star">✧</span><span class="overline">IL MASTER RACCONTA</span><span class="chapter">I</span></div><h2 id="scene-title">Il vostro tavolo vi aspetta</h2><div class="ornament">──── ◇ ────</div><div id="scene-text" class="scene-text"><p>La vostra avventura sta per cominciare.</p></div><p class="choice-label">QUALCHE IDEA, SE VI SERVE</p><div id="scene-choices" class="scene-choices"></div><p class="scene-freedom">Sono spunti: proponete qualsiasi azione, anche fuori da questi esempi.</p></section>
+            <section class="mini-character" id="mini-character"></section>
+            <section id="combat-panel" class="combat-panel" hidden></section>
+            <div class="master-note"><svg><use href="#i-book"/></svg><p><strong>Il vostro master è nella chat.</strong>Voi scegliete, io racconto e aggiorno questo tavolo. Non serve una chiave API.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-personaggio" class="view" aria-label="Il gruppo di avventurieri" hidden><div id="character-content"></div></section>
+      <section id="view-diario" class="view" aria-label="Diario di viaggio" hidden><div class="journal-layout"><section class="paper-panel"><p class="overline gold">LE TRACCE CHE LASCI</p><h2>Diario di viaggio</h2><p class="muted">Scene, scelte e scoperte: la memoria della tua avventura.</p><div id="journal-entries" class="journal-entries"></div></section><aside><section class="dark-panel"><p class="overline gold">OBIETTIVI</p><h2>Fili della storia</h2><div id="quest-list"></div></section><section class="dark-panel"><h2>Un appunto per dopo</h2><form id="note-form"><label class="sr-only" for="note-input">Il tuo appunto</label><textarea id="note-input" rows="3" maxlength="4000" placeholder="Un nome da ricordare, una pista da seguire…" required></textarea><button class="outline-button" type="submit">Aggiungi al diario</button></form></section><section class="dark-panel"><h2>Porta con te la storia</h2><p class="muted">I salvataggi sono automatici. Puoi anche conservare o ripristinare una copia JSON.</p><button class="outline-button" id="export-button-2">Esporta JSON</button><button class="quiet-button" id="import-open">Ripristina una copia…</button><input type="file" id="import-file" accept=".json,application/json" hidden></section></aside></div></section>
+      <section id="view-guida" class="view" aria-label="Come si gioca" hidden><section class="paper-panel guide"><p class="overline gold">BENVENUTI AL TAVOLO</p><h2>Quattro avventurieri. Una storia tutta vostra.</h2><p>Questa è la plancia della campagna. Il master sono io, nella chat di Codex aperta su questa cartella: potete parlarmi normalmente, senza comandi speciali. Il tavolo è pensato per quattro giocatori riuniti davanti allo stesso schermo.</p><div class="guide-steps"><article><span>01</span><h3>Create il gruppo</h3><p>Aprite &laquo;Il gruppo&raquo;: scegliete nome, una delle 12 classi base, specie e competenze. I modelli pronti sono facoltativi. Prima dell'avventura potete modificare anche le scelte gi&agrave; fatte.</p></article><article><span>02</span><h3>Ditemi che cosa fate</h3><p>Indicate il personaggio: «Mira: controllo la porta». Potete scrivere direttamente in chat o preparare e copiare l'azione dalla plancia. Per un'azione comune scrivete «Tutti: …».</p></article><article><span>03</span><h3>Il mondo risponde</h3><p>Io descrivo le conseguenze, interpreto gli altri personaggi e gestisco i tiri quando c'è un rischio. Mappa, diario e quattro schede si aggiornano mentre giochiamo.</p></article></div><h3>Le regole, al volo</h3><p>Quando serve una prova, si tira un d20 e si aggiunge il bonus adatto. Il risultato deve raggiungere la difficoltà scelta dal master. Con vantaggio si tirano due d20 e si usa il più alto; con svantaggio, il più basso. Un attacco deve raggiungere la Classe Armatura del bersaglio.</p><p>Potete parlare, esplorare, combattere, fuggire o inventare una soluzione. Non ogni azione richiede un tiro. Selezionate il personaggio attivo prima di un tiro: il suo nome comparirà nel registro. In combattimento il master tiene l'iniziativa e dà la parola al personaggio di turno.</p><h3>Una campagna che resta</h3><p>Lo stato è in <code>data/campaign.json</code>, le copie automatiche in <code>saves/</code>. Quando riaprite Codex su questa cartella, scrivete «Riprendiamo la campagna». Il file <code>AGENTS.md</code> spiega al master come ripartire.</p><p>La plancia controlla gli aggiornamenti ogni due secondi. «Prepara e copia» conserva l'azione in attesa e la copia, ma per ricevere una risposta dovete inviarla nella chat. Se la copia non è disponibile, il testo rimane selezionabile.</p><h3>La vostra avventura</h3><p><a id="campaign-source-link" target="_blank" rel="noreferrer">La fonte della campagna</a><span id="campaign-source-description"></span></p><p id="campaign-rules-description">Le regole del tavolo sono in REGOLE.md. Il master consulta la fonte dell’avventura senza mostrare anticipazioni.</p><p id="campaign-map-description">La carta orienta il viaggio; luoghi e dettagli si aggiungono durante la partita.</p><p class="attribution">Materiale di regole da <a href="https://www.dndbeyond.com/srd" target="_blank" rel="noreferrer">SRD 5.1</a>, licenza <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. Sintesi e adattamenti in italiano. Attribuzioni complete in <code>ATTRIBUZIONI.md</code>. La campagna dell’autore conserva la propria licenza; la licenza SRD riguarda il materiale di regole.</p></section></section>
+      <div id="table-action-dock" class="table-action-dock"></div>
+      <div id="performance-panel"></div>
+      <button type="button" id="action-jump" class="action-jump" aria-label="Scrivi un messaggio per il master"><svg aria-hidden="true"><use href="#i-scene"/></svg><span>Scrivi al master</span></button>
+      <footer class="page-footer"><span>IL TAVOLO <span>✧</span> LA VOSTRA STORIA COMINCIA QUI</span><span id="revision-label">In attesa del tavolo</span></footer>
+    </div>
+  </main>
+
+  <dialog id="dice-dialog"><div class="dialog-heading"><div><p class="overline gold">UN PO' DI SORTE</p><h2>I dadi del destino</h2></div><button class="icon-button close-dialog" aria-label="Chiudi dadi"><svg><use href="#i-close"/></svg></button></div><p class="muted">Ogni tiro viene conservato. Tira quando lo chiede il master.</p><p id="dice-actor" class="dice-actor"></p><div class="dice-presets" id="dice-presets"></div><form id="dice-form"><label for="dice-expression">Dadi e modificatore</label><input id="dice-expression" value="1d20" maxlength="40" spellcheck="false" required><label for="dice-label">A che cosa serve?</label><input id="dice-label" placeholder="Es. Percezione" maxlength="120"><label for="dice-mode">Modalità</label><select id="dice-mode"><option value="normal">Normale</option><option value="advantage">Vantaggio · migliore di 2d20</option><option value="disadvantage">Svantaggio · peggiore di 2d20</option></select><button class="primary-button" id="roll-button" type="submit"><svg><use href="#i-dice"/></svg>Tira i dadi</button></form><div id="dice-result" class="dice-result" aria-live="polite"><span>✧</span><p>Il destino aspetta.</p></div><h3 class="recent-heading">Ultimi tiri</h3><div id="recent-rolls"></div></dialog>
+  <dialog id="confirm-dialog"><div class="dialog-heading"><h2>Ripristinare il salvataggio?</h2></div><p>La copia selezionata sostituirà lo stato corrente della campagna. Prima del ripristino verrà conservata una copia automatica.</p><div class="dialog-actions"><button id="import-cancel" class="outline-button">Annulla</button><button id="import-confirm" class="primary-button">Ripristina</button></div></dialog>
+  <dialog id="reference-dialog" class="reference-dialog" aria-labelledby="reference-title">
+    <header class="reference-heading"><div><p id="reference-kind" class="overline gold">IL MANUALE DEL TAVOLO</p><h2 id="reference-title">Dettagli</h2></div><button id="reference-close" class="reference-close" type="button" aria-label="Chiudi dettagli" autofocus><svg aria-hidden="true"><use href="#i-close"/></svg></button></header>
+    <div id="reference-content" class="reference-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript>Attiva JavaScript e apri il tavolo con AVVIA.cmd per usare mappa e salvataggi.</noscript>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Runtime belongs to your table, never to the public repository.
+/data/
+/master/
+/sessions/
+/saves/
+/campaigns/
+/handoff.md
+/rules.md
+/logs/
+/QA/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.temp
+*.pdf
+tests/.artifacts/
+.DS_Store
+Thumbs.db

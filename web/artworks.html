@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#14291f">
+  <meta name="description" content="Illustrazioni d’atmosfera originali per il vostro tavolo d’avventura.">
+  <title>Illustrazioni d’atmosfera · Il vostro tavolo</title>
+  <link rel="icon" href="/assets/sigil.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/art-gallery.css">
+  <script src="/art-gallery.js" defer></script>
+</head>
+<body>
+  <header class="art-header">
+    <a href="/#scena" class="art-back">← Torna al tavolo</a>
+    <a href="/maps.html" class="art-map-link">La cartoteca ↗</a>
+  </header>
+  <main class="art-main">
+    <section class="art-intro" aria-labelledby="art-page-title">
+      <p class="art-kicker">LUCE, SENTIERI E RACCONTI</p>
+      <h1 id="art-page-title">Illustrazioni d’atmosfera</h1>
+      <p>Quattro finestre sul mondo dell’avventura. Aprite un’immagine per guardarla da vicino o conservarla.</p>
+      <p class="art-intro-note"><span aria-hidden="true">✦</span> Sono interpretazioni originali: posizioni e avvenimenti li definisce il racconto del master.</p>
+    </section>
+    <section id="art-grid" class="art-grid" aria-label="Le illustrazioni"></section>
+    <noscript><p class="art-noscript">Attivate JavaScript per aprire la galleria.</p></noscript>
+    <footer class="art-footer"><p>Disegni d’atmosfera · Il vostro tavolo d’avventura</p><a href="/#guida">Guida del tavolo ↗</a></footer>
+  </main>
+  <dialog id="art-dialog" class="art-dialog" aria-labelledby="art-dialog-title" aria-describedby="art-dialog-caption">
+    <header class="art-dialog-header"><div><p id="art-dialog-count" class="art-kicker"></p><h2 id="art-dialog-title"></h2></div><button id="art-close" class="art-icon-button" type="button" aria-label="Chiudi l’illustrazione">×</button></header>
+    <div id="art-dialog-frame" class="art-dialog-frame"></div>
+    <footer class="art-dialog-footer"><div><p id="art-dialog-caption"></p><p class="art-dialog-hint">Frecce per sfogliare · Esc per tornare alla galleria</p></div><div class="art-dialog-tools"><button id="art-previous" class="art-icon-button" type="button" aria-label="Illustrazione precedente">←</button><button id="art-next" class="art-icon-button" type="button" aria-label="Illustrazione successiva">→</button><a id="art-dialog-download" class="art-button" download>Scarica PNG ↓</a></div></footer>
+  </dialog>
+</body>
+</html>
