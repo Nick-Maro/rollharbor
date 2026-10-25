@@ -24,3 +24,14 @@ venv/
 tests/.artifacts/
 .DS_Store
 Thumbs.db
+
+# Local key material and credential bundles.
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519

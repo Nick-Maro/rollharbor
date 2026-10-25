@@ -7,7 +7,7 @@ remove tracked files or their history.
 Create a **new source directory** using the explicit public allowlist:
 
 ```bash
-python tools/export_public.py ../il-tavolo-public
+python tools/export_public.py ../rollharbor-public
 ```
 
 The destination must not exist. The exporter refuses to merge with or overwrite
@@ -23,6 +23,7 @@ python tools/dnd.py validate
 python -m unittest discover -s tests -q
 git init -b main
 git add .
+python tools/check_public.py
 git status --short
 git diff --cached --stat
 ```
@@ -31,6 +32,13 @@ Inspect the staged paths: `data/`, `master/`, `saves/`, `campaigns/`, `sessions/
 `handoff.md`, `rules.md`, PDFs and credentials must not be staged. Then create a
 local commit. Connecting a remote and pushing are separate publication steps;
 review the [release checklist](RELEASE_CHECKLIST.md) first.
+
+`tools/check_public.py` rejects private runtime paths and common credential-file
+names in the Git index, including files force-added despite ignore rules. It
+supplements a dedicated secret scanner. Before a release, scan both the current
+source and the entire history being pushed with a tool such as Gitleaks, using
+redacted reports stored outside the repository. Review example fixtures separately
+from real credentials; never publish scanner reports containing secret values.
 
 Only publish this clean checkout. The original private working repository retains
 the existing campaign and its history. Do not solve this by force-pushing a

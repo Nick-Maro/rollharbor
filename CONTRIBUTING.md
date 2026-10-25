@@ -40,6 +40,8 @@ Windows launcher checks run with `python tests/launcher_smoke.py`.
 - Identify rule sources and distinguish house rules from SRD text.
 - Include reproducible validation and update documentation when behavior changes.
 - Do not contribute commercial PDFs, OCR, private saves, credentials or unlicensed assets.
+- Before publishing, run `python tools/check_public.py` after staging changes and
+  scan the history with a dedicated secret scanner. Keep redacted reports local.
 
 Original code contributions use MIT; SRD-derived rules retain CC BY 4.0 attribution.
 See [ATTRIBUZIONI.md](ATTRIBUZIONI.md).
